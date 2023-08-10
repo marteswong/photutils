@@ -561,6 +561,8 @@ class PixelAperture(Aperture):
 
                 values = (data[slc_large] * aper_weights)[pixel_mask]
                 aperture_sums.append(values.sum())
+                # aperture_sums.append(np.nanmean(values))
+                # aperture_sums.append(np.nansum(values))
 
                 if error is not None:
                     variance = (error[slc_large]**2 * aper_weights)[pixel_mask]
